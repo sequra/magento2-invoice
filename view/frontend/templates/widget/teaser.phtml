@@ -1,0 +1,12 @@
+<div id="sequra_invoice_teaser"></div>
+<script type="text/x-magento-init">
+    {
+        "#sequra_invoice_teaser": {
+            "Sequra_Invoice/js/teaser-js": {
+                "max_amount": "<?php echo (int)$block->getMaxOrderTotal();?>",
+                "css_price_selector": "<?php echo $block->getData('price_sel');?>",
+                "css_dest_selector": "<?php echo $block->getData('dest_sel');?>"
+            }
+        }
+    }
+</script>
