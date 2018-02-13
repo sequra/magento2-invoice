@@ -27,7 +27,7 @@
             <!--<argument name="formBlockType" xsi:type="string">Magento\Payment\Block\Transparent\Form</argument>-->
             <argument name="infoBlockType" xsi:type="string">Magento\Payment\Block\ConfigurableInfo</argument>
             <argument name="valueHandlerPool" xsi:type="object">SequraInvoiceGatewayValueHandlerPool</argument>
-            <!--<argument name="commandPool" xsi:type="object">SequraGatewayCommandPool</argument>-->
+            <argument name="validatorPool" xsi:type="object">SequraInvoiceValidatorPool</argument>
         </arguments>
     </virtualType>
 
@@ -37,6 +37,7 @@
             <argument name="methodCode" xsi:type="const">\Sequra\Invoice\Model\Ui\ConfigProvider::CODE</argument>
         </arguments>
     </virtualType>
+
     <!-- Value handlers infrastructure -->
     <virtualType name="SequraInvoiceGatewayValueHandlerPool" type="Magento\Payment\Gateway\Config\ValueHandlerPool">
         <arguments>
@@ -48,6 +49,18 @@
     <virtualType name="SequraInvoiceGatewayConfigValueHandler" type="Magento\Payment\Gateway\Config\ConfigValueHandler">
         <arguments>
             <argument name="configInterface" xsi:type="object">SequraInvoiceGatewayConfig</argument>
+        </arguments>
+    </virtualType>
+    <virtualType name="SequraInvoiceCountryValidator" type="Magento\Payment\Gateway\Validator\CountryValidator">
+        <arguments>
+            <argument name="config" xsi:type="object">SequraInvoiceGatewayConfig</argument>
+        </arguments>
+    </virtualType>
+    <virtualType name="SequraInvoiceValidatorPool" type="Magento\Payment\Gateway\Validator\ValidatorPool">
+        <arguments>
+            <argument name="validators" xsi:type="array">
+                <item name="country" xsi:type="string">SequraInvoiceCountryValidator</item>
+            </argument>
         </arguments>
     </virtualType>
 

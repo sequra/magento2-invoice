@@ -23,6 +23,8 @@
                 <can_capture_partial>0</can_capture_partial>
                 <sort_order>1</sort_order>
                 <product>i1</product>
+                <allowspecific>1</allowspecific>
+                <specificcountry>ES</specificcountry>
             </sequra_invoice>
         </payment>
     </default>
