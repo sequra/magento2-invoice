@@ -17,28 +17,6 @@ define(
                 template: 'Sequra_Invoice/payment/form'
             },
 
-            initObservable: function () {
-                this._super();
-                /*    .observe([
-                        'transactionResult'
-                    ]);*/
-                return this;
-            },
-
-            getCode: function() {
-                return 'sequra_invoice';
-            },
-
-            getData: function() {
-                return {
-                    'method': this.item.method,
-                    /*'additional_data': {
-                        'transaction_result': this.transactionResult()
-                    }*/
-                };
-            },
-
-
             showSequraForm: function () {
                if (additionalValidators.validate()) {
                    //update payment method information if additional data was changed
