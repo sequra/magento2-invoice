@@ -7,8 +7,6 @@ namespace Sequra\Invoice\Model\Ui;
 
 use Magento\Checkout\Model\ConfigProviderInterface;
 
-//@todo: Implement toknization as option
-
 /**
  * Class ConfigProvider
  */
@@ -25,12 +23,7 @@ final class ConfigProvider implements ConfigProviderInterface
     {
         return [
             'payment' => [
-                self::CODE => [
-                    'useStoredCard' => [
-                        '1' => __('Yes'),
-                        '0' => __('No')
-                    ]
-                ]
+                self::CODE => []
             ]
         ];
     }
