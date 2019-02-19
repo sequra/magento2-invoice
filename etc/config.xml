@@ -25,7 +25,6 @@
                 <product>i1</product>
                 <allowspecific>1</allowspecific>
                 <specificcountry>ES</specificcountry>
-                <currency>EUR</currency>
             </sequra_invoice>
         </payment>
     </default>
