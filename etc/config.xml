@@ -10,8 +10,9 @@
         <payment>
             <sequra_invoice>
                 <debug>1</debug>
-                <title>Recibe primero, paga después</title>
+                <title>Compra ahora, paga después</title>
                 <active>1</active>
+                <showlogo>1</showlogo>
                 <model>SequraInvoiceGatewayFacade</model>
                 <max_order_total>400</max_order_total>
                 <min_order_total>0</min_order_total>

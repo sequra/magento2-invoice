@@ -26,6 +26,12 @@
         </arguments>
     </virtualType>
 
+    <type name="Sequra\Invoice\Model\Ui\ConfigProvider">
+       <arguments>
+           <argument name="config" xsi:type="object">SequraInvoiceGatewayConfig</argument>
+       </arguments>
+    </type>
+
     <!-- Value handlers infrastructure -->
     <virtualType name="SequraInvoiceGatewayValueHandlerPool" type="Magento\Payment\Gateway\Config\ValueHandlerPool">
         <arguments>
