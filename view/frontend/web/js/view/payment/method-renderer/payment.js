@@ -50,7 +50,7 @@ define(
                 return 'Compra primero, paga en 7 días';
             },
 
-            showSequraForm: function () {
+            placeOrder: function () {
                if (additionalValidators.validate()) {
                    //update payment method information if additional data was changed
                    this.selectPaymentMethod();
