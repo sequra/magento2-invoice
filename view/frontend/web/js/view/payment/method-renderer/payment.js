@@ -30,6 +30,12 @@ define(
                 template: 'Sequra_Invoice/payment/form'
             },
 
+            initObservable: function () {
+                this._super();
+                Sequra.onLoad(function(){Sequra.refreshComponents();});
+                return this;
+            },
+
             getProduct: function () {
                 return window.checkoutConfig.payment.sequra_invoice.product;
             },
