@@ -13,10 +13,11 @@ define(
     ],
     function ($, quote, urlBuilder, storage, errorProcessor, fullScreenLoader, setPaymentInformation) {
         'use strict';
-
+        fullScreenLoader.startLoader();
         return function (messageContainer) {
             var serviceUrl,
                 placeOrder = function () {
+                    fullScreenLoader.startLoader();
                     if (typeof window.SequraFormInstance === 'undefined') {
                         setTimeout(placeOrder, 100);
                         return;
@@ -27,6 +28,7 @@ define(
                     });
                     window.SequraFormInstance.setElement("sq-identification-i1");
                     window.SequraFormInstance.show();
+                    fullScreenLoader.stopLoader();
                 };
 
             return setPaymentInformation(messageContainer, quote.paymentMethod()).done(
