@@ -13,7 +13,6 @@ define(
     ],
     function ($, quote, urlBuilder, storage, errorProcessor, fullScreenLoader, setPaymentInformation) {
         'use strict';
-        fullScreenLoader.startLoader();
         return function (messageContainer) {
             var serviceUrl,
                 placeOrder = function () {
