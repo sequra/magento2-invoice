@@ -6,7 +6,7 @@
 define(
     [
         'Magento_Checkout/js/view/payment/default',
-        'Sequra_Invoice/js/action/set-payment-method',
+        'Sequra_Core/js/action/set-payment-method',
         'Magento_Checkout/js/model/payment/additional-validators',
         'Magento_Checkout/js/model/quote'
     ],
@@ -31,7 +31,11 @@ define(
             },
 
             initObservable: function () {
-                this._super();
+                this._super()
+                    .observe([
+                        'title'
+                    ]);
+                this.title(this.item.title);
                 Sequra.onLoad(function(){Sequra.refreshComponents();});
                 return this;
             },
@@ -50,10 +54,6 @@ define(
 
             showLogo: function(){
                 return window.checkoutConfig.payment.sequra_invoice.showlogo === "1";
-            },
-
-            getTitle: function(){
-                return 'Compra primero, paga en 7 días';
             },
 
             placeOrder: function () {
