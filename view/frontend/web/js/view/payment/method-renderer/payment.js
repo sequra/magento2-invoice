@@ -35,7 +35,7 @@ define(
                     .observe([
                         'title'
                     ]);
-                this.title(this.item.title);
+                this.title(window.checkoutConfig.payment.sequra_invoice.checkout_title);
                 Sequra.onLoad(function(){Sequra.refreshComponents();});
                 return this;
             },

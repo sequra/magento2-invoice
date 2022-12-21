@@ -11,6 +11,7 @@
             <sequra_invoice>
                 <debug>1</debug>
                 <title>Compra ahora, paga después</title>
+                <checkout_title>Compra ahora, paga después</checkout_title>
                 <active>1</active>
                 <showlogo>1</showlogo>
                 <model>SequraInvoiceGatewayFacade</model>
